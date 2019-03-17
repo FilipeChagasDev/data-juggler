@@ -7,9 +7,10 @@ SOURCES += \
     tester.cpp \
     linearnode.cpp \
     exception.cpp \
-    string.cpp
+    namehash.cpp
 
 HEADERS += \
     linearnode.hpp \
     exception.hpp \
-    string.hpp
+    string.hpp \
+    stringhash.hpp

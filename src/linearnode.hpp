@@ -1,7 +1,11 @@
 #ifndef LINEARNODE_H
 #define LINEARNODE_H
 
+#include "exception.hpp"
+
 namespace DataJuggler {
+
+
 
 class LinearNode
 {
@@ -29,10 +33,23 @@ class LinearNode
         virtual void CloneFrom(LinearNode &to_copy); //copy another LinearNode (object from reference)
 
         void insertAfter(LinearNode *to_insert);
-        void insertBefore(LinearNode *to_insert); //TODO
-        void moveToAfterOf(LinearNode *ref_node); //TODO
-        void moveToBeforeOf(LinearNode *ref_node); //TODO
-        void remove(); //TODO
+        void insertBefore(LinearNode *to_insert);
+        void remove();
+        void moveToAfterOf(LinearNode *ref_node);
+        void moveToBeforeOf(LinearNode *ref_node);
+
+        LinearNode *getNext();
+        LinearNode *getPrevious();
+
+        void checkIntegrity();
+};
+
+class DamagedLinearEx : public Exception
+{
+    public:
+        LinearNode *node_where_throwed;
+        DamagedLinearEx(LinearNode *node_where_throwed);
+        static const unsigned long long defaultCode = 6966;
 };
 
 } //end of DataJuggler namespace
