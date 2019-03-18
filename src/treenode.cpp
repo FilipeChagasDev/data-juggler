@@ -12,7 +12,35 @@ BinaryTreeNode::BinaryTreeNode()
 }
 
 BinaryTreeNode::~BinaryTreeNode()
-{
+{   //set null all references to this object on the tree
+    if(this->left != nullptr)
+    {
+        this->left->onBranchOfHigher = BinaryTreeNode::Branch::none_branch;
+        this->left->higher = nullptr;
+    }
+
+    if(this->right != nullptr)
+    {
+        this->right->onBranchOfHigher = BinaryTreeNode::Branch::none_branch;
+        this->right->higher = nullptr;
+    }
+
+    switch(this->onBranchOfHigher)
+    {
+        case BinaryTreeNode::Branch::left_branch:
+        {
+            this->higher->left = nullptr;
+            break;
+        }
+
+        case BinaryTreeNode::Branch::right_branch:
+        {
+            this->higher->right = nullptr;
+            break;
+        }
+
+        default:{}
+    }
 }
 
 // -------------------- getters -----------------------
@@ -79,6 +107,8 @@ void BinaryTreeNode::recursiveDeleteSubtree(BinaryTreeNode *node)
 
     if(node->isLeaf())
     {
+        /*          --- Destructor already do this ----
+
         if(node->onBranchOfHigher == BinaryTreeNode::Branch::right_branch)
         {
             node->higher->right = nullptr;
@@ -87,6 +117,7 @@ void BinaryTreeNode::recursiveDeleteSubtree(BinaryTreeNode *node)
         {
             node->higher->left = nullptr;
         }
+        */
 
         delete node;
     }
