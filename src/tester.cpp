@@ -1,17 +1,172 @@
 #include <iostream>
 #include "stringhash.hpp"
 #include "linearnode.hpp"
+#include "treenode.hpp"
+#include <cstdlib>
 
+#define CLEANSCREEN system("clear");
 using namespace std;
 
 void manual_test_string_hash_generator();
 void manual_test_linear();
+void manual_test_treenode();
 
 int main()
 {
     //manual_test_string_hash_generator();
-    manual_test_linear();
+    //manual_test_linear();
+    manual_test_treenode();
     return 0;
+}
+
+// ------- BinaryTreeNode tester --------
+
+class IntTreeNode : public DataJuggler::BinaryTreeNode
+{
+    public:
+        int data;
+        IntTreeNode(int data);
+};
+
+IntTreeNode::IntTreeNode(int data) : DataJuggler::BinaryTreeNode()
+{
+    this->data = data;
+}
+
+void show_tree(IntTreeNode *tn, int counter)
+{
+#define ESPACO for(int i = 0; i < counter-1; i++) cout << "´\t";
+    //for(int i = 0; i < counter; i++) cout << " ";
+
+    if(tn == nullptr)
+    {
+        ESPACO;
+        cout << "null" << endl;
+        return;
+    }
+
+    ESPACO;
+    cout << "data:" << tn->data;
+    cout << endl;
+
+    /*ESPACO;
+    cout << "higher data:" << static_cast<IntTreeNode*>(tn->getHigher())-;
+    cout << endl;*/
+
+    ESPACO;
+    cout << "left:{";
+    cout << endl;
+
+    show_tree(static_cast<IntTreeNode*>(tn->getLeft()), counter+1);
+
+    ESPACO;
+    cout << "}";
+    cout << endl;
+
+    ESPACO;
+    cout << "right:{";
+    cout << endl;
+
+    show_tree(static_cast<IntTreeNode*>(tn->getRight()), counter+1);
+
+    ESPACO;
+    cout << "}";
+    cout << endl;
+}
+
+void manual_test_treenode()
+{
+    IntTreeNode *root = new IntTreeNode(-1);
+    IntTreeNode *tree = root;
+
+    //Construct tree randomly
+    for(int i = 0; i < 5; i++)
+    {
+        srand((unsigned int)clock());
+        switch(rand()%2)
+        {
+            case 0:
+            {
+                tree->insertLeft(new IntTreeNode(i));
+                break;
+            }
+
+            case 1:
+            {
+                tree->insertRight(new IntTreeNode(i));
+
+                break;
+            }
+        }
+
+        switch(rand()%3)
+        {
+            case 0:
+            {
+                if(tree->getLeft() != nullptr)
+                    tree = static_cast<IntTreeNode*>(tree->getLeft());
+                break;
+            }
+
+            case 1:
+            {
+                if(tree->getRight() != nullptr)
+                    tree = static_cast<IntTreeNode*>(tree->getRight());
+                break;
+            }
+
+            default:{}
+        }
+    }
+
+    //Options
+    while (1)
+    {
+        CLEANSCREEN;
+        cout << "current tree:" << endl;
+        show_tree(root, 1);
+        cout << "Set a node to remove whith these commands: gotoright, gotoleft, delete" << endl;
+        IntTreeNode *current = root;
+        string cmd;
+        do
+        {
+            cout << "current node data:" << current->data << endl;
+            cin >> cmd;
+            if(cmd == "gotoright")
+            {
+                if(current->getRight() == nullptr)
+                {
+                    cout << "error: nullptr" << endl;
+                    continue;
+                }
+
+                current = static_cast<IntTreeNode*>(current->getRight());
+            }
+            else if(cmd == "gotoleft")
+            {
+                if(current->getLeft() == nullptr)
+                {
+                    cout << "error: nullptr" << endl;
+                    continue;
+                }
+
+                current = static_cast<IntTreeNode*>(current->getLeft());
+            }
+            else
+            {
+                cout << "undefined command" << endl;
+            }
+
+        }while(cmd != "delete");
+
+        current->deleteTree();
+
+        if(current == root)
+        {
+            cout << "tree deleted" << endl;
+            return;
+        }
+    }
 }
 
 // ------- LinearNode tester ---------
@@ -124,7 +279,7 @@ void manual_test_linear()
             }
         }
 
-        system("clear");
+        CLEANSCREEN;
     }
 }
 

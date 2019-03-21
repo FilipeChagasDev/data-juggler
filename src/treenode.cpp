@@ -98,12 +98,12 @@ void BinaryTreeNode::insertRight(BinaryTreeNode *to_insert)
 
 // ---------------- deleters ---------------------
 
-void BinaryTreeNode::recursiveDeleteSubtree(BinaryTreeNode *node)
+void BinaryTreeNode::recursiveDeleteTree(BinaryTreeNode *node)
 {
     if(node == nullptr) return;
 
-    recursiveDeleteSubtree(node->left);
-    recursiveDeleteSubtree(node->right);
+    recursiveDeleteTree(node->left);
+    recursiveDeleteTree(node->right);
 
     if(node->isLeaf())
     {
@@ -123,9 +123,9 @@ void BinaryTreeNode::recursiveDeleteSubtree(BinaryTreeNode *node)
     }
 }
 
-void BinaryTreeNode::deleteSubtree()
+void BinaryTreeNode::deleteTree()
 {
-    BinaryTreeNode::recursiveDeleteSubtree(this);
+    BinaryTreeNode::recursiveDeleteTree(this);
 }
 
 // ------------------------ booleans -------------------------

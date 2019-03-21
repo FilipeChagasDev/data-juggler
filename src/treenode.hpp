@@ -29,8 +29,8 @@ class BinaryTreeNode
         bool isRoot();
         bool isLeaf();
         bool isOnly();
-        virtual void deleteSubtree();
-        static void recursiveDeleteSubtree(BinaryTreeNode *node);
+        virtual void deleteTree();
+        static void recursiveDeleteTree(BinaryTreeNode *node);
 };
 
 } //end of namespace
