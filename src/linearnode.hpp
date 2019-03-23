@@ -6,50 +6,74 @@
 namespace DataJuggler {
 
 
-
-class LinearNode
+/** This class represents the double-linked node of a list structure.
+This class is basic and should not be instantiated directly. Subclasses of this can be used to insert data into the node. */
+class LinkedListNode
 {
+
     public:
+        /** This class represents the header of a list formed by LinkedListNodes. */
         class Header
         {
             public:
                 unsigned long counter;
-                LinearNode *first;
-                LinearNode *last;
+                LinkedListNode *first;
+                LinkedListNode *last;
         };
 
     protected:
-        LinearNode::Header *extern_header;
-        LinearNode *next;
-        LinearNode *previous;
+        LinkedListNode::Header *extern_header;
+        LinkedListNode *next;
+        LinkedListNode *previous;
 
     public:
-        LinearNode(LinearNode::Header *extern_header); //default constructor (header from pointer)
-        LinearNode(LinearNode::Header &extern_header); //default constructor (header from ref)
+        /** This constructor takes as an argument a pointer to the list header */
+        LinkedListNode(LinkedListNode::Header *extern_header);
 
-        virtual ~LinearNode(); //TODO destructor
+         /** This constructor takes as an argument a reference to the list header */
+        LinkedListNode(LinkedListNode::Header &extern_header);
 
-        virtual void CloneFrom(LinearNode *to_copy); //copy another LinearNode (object from pointer)
-        virtual void CloneFrom(LinearNode &to_copy); //copy another LinearNode (object from reference)
+        virtual ~LinkedListNode(); //TODO destructor
 
-        void insertAfter(LinearNode *to_insert);
-        void insertBefore(LinearNode *to_insert);
+        /** Make it a copy of another LinkedListNode (object from pointer)*/
+        virtual void CloneFrom(LinkedListNode *to_copy);
+
+        /** Make it a copy of another LinkedListNode (object from reference) */
+        virtual void CloneFrom(LinkedListNode &to_copy);
+
+        /** Insert a node after this in linked list*/
+        void insertAfter(LinkedListNode *to_insert);
+
+        /** Insert a node before this in linked list*/
+        void insertBefore(LinkedListNode *to_insert);
+
+        /** Remove this node from the linked list (without delete this)*/
         void remove();
-        void moveToAfterOf(LinearNode *ref_node);
-        void moveToBeforeOf(LinearNode *ref_node);
 
-        LinearNode *getNext();
-        LinearNode *getPrevious();
+        /** Move this node to after of a reference node of the same list */
+        void moveToAfterOf(LinkedListNode *ref_node);
 
+        /** Move this node to before of a reference node of the same list */
+        void moveToBeforeOf(LinkedListNode *ref_node);
+
+        /** Get the next node of this in the list */
+        LinkedListNode *getNext();
+
+        /** Get the previous node of this in the list */
+        LinkedListNode *getPrevious();
+
+        /** Checks for logical errors in the linked list */
         void checkIntegrity();
 };
 
-class DamagedLinearEx : public Exception
+/** This class represents an exception caused by a logical error in a linked list. When a logical
+error is detected in the linked list, this class is instantiated and an exception is thrown with it.    */
+class DamagedLinkedListEx : public Exception
 {
     public:
-        LinearNode *node_where_throwed;
-        DamagedLinearEx(LinearNode *node_where_throwed);
-        static const unsigned long long defaultCode = 6966;
+        LinkedListNode *node_where_throwed;
+        DamagedLinkedListEx(LinkedListNode *node_where_throwed);
+        static const unsigned long long defaultCode = 11246;
 };
 
 } //end of DataJuggler namespace

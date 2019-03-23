@@ -4,6 +4,11 @@
 #include "treenode.hpp"
 #include <cstdlib>
 
+/*
+ * This file is just a draft that I (Filipe Chagas) use to make the unit tests.
+ * Look in the unit-tests directory for more organized and careful unit tests.
+*/
+
 #define CLEANSCREEN system("clear");
 using namespace std;
 
@@ -33,7 +38,7 @@ IntTreeNode::IntTreeNode(int data) : DataJuggler::BinaryTreeNode()
     this->data = data;
 }
 
-void show_tree(IntTreeNode *tn, int counter)
+void show_tree(IntTreeNode *tn, IntTreeNode *root, int counter)
 {
 #define ESPACO for(int i = 0; i < counter-1; i++) cout << "´\t";
     //for(int i = 0; i < counter; i++) cout << " ";
@@ -49,15 +54,15 @@ void show_tree(IntTreeNode *tn, int counter)
     cout << "data:" << tn->data;
     cout << endl;
 
-    /*ESPACO;
-    cout << "higher data:" << static_cast<IntTreeNode*>(tn->getHigher())-;
-    cout << endl;*/
+    ESPACO;
+    cout << "depth:" << tn->getDistanceTo(root);
+    cout << endl;
 
     ESPACO;
     cout << "left:{";
     cout << endl;
 
-    show_tree(static_cast<IntTreeNode*>(tn->getLeft()), counter+1);
+    show_tree(static_cast<IntTreeNode*>(tn->getLeft()), root, counter+1);
 
     ESPACO;
     cout << "}";
@@ -67,7 +72,7 @@ void show_tree(IntTreeNode *tn, int counter)
     cout << "right:{";
     cout << endl;
 
-    show_tree(static_cast<IntTreeNode*>(tn->getRight()), counter+1);
+    show_tree(static_cast<IntTreeNode*>(tn->getRight()), root, counter+1);
 
     ESPACO;
     cout << "}";
@@ -124,7 +129,8 @@ void manual_test_treenode()
     {
         CLEANSCREEN;
         cout << "current tree:" << endl;
-        show_tree(root, 1);
+        show_tree(root, root, 1);
+        cout << "Deeper leaf data: " << static_cast<IntTreeNode*>(root->getDeeperSubtreeLeaf())->data << endl;
         cout << "Set a node to remove whith these commands: gotoright, gotoleft, delete" << endl;
         IntTreeNode *current = root;
         string cmd;
@@ -159,7 +165,7 @@ void manual_test_treenode()
 
         }while(cmd != "delete");
 
-        current->deleteTree();
+        current->deleteSubtree();
 
         if(current == root)
         {
@@ -171,15 +177,15 @@ void manual_test_treenode()
 
 // ------- LinearNode tester ---------
 
-class IntNode : public DataJuggler::LinearNode
+class IntNode : public DataJuggler::LinkedListNode
 {
     public:
         int data;
-        IntNode(LinearNode::Header *h);
+        IntNode(LinkedListNode::Header *h);
         ~IntNode();
 };
 
-IntNode::IntNode(LinearNode::Header *h) : DataJuggler::LinearNode(h)
+IntNode::IntNode(LinkedListNode::Header *h) : DataJuggler::LinkedListNode(h)
 {
 }
 
@@ -189,7 +195,7 @@ IntNode::~IntNode()
 
 void manual_test_linear()
 {
-    DataJuggler::LinearNode::Header *h = new DataJuggler::LinearNode::Header();
+    DataJuggler::LinkedListNode::Header *h = new DataJuggler::LinkedListNode::Header();
     IntNode *curnode = new IntNode(h);
     curnode->data = 0;
     int answer;

@@ -4,7 +4,6 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    tester.cpp \
     linearnode.cpp \
     exception.cpp \
     stringhash.cpp \
@@ -15,4 +14,6 @@ HEADERS += \
     exception.hpp \
     string.hpp \
     stringhash.hpp \
-    treenode.hpp
+    treenode.hpp \
+    lambda.hpp \
+    main_test.test

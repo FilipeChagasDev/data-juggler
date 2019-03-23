@@ -1,12 +1,14 @@
 #include "treenode.hpp"
+
+
 namespace DataJuggler {
 
 // --------------------- constructors ------------------------
 
 BinaryTreeNode::BinaryTreeNode()
 {
-    this->onBranchOfHigher = BinaryTreeNode::Branch::none_branch;
-    this->higher = nullptr;
+    this->onBranchOfUpper = BinaryTreeNode::Branch::none_branch;
+    this->upper = nullptr;
     this->left = nullptr;
     this->right = nullptr;
 }
@@ -15,27 +17,27 @@ BinaryTreeNode::~BinaryTreeNode()
 {   //set null all references to this object on the tree
     if(this->left != nullptr)
     {
-        this->left->onBranchOfHigher = BinaryTreeNode::Branch::none_branch;
-        this->left->higher = nullptr;
+        this->left->onBranchOfUpper = BinaryTreeNode::Branch::none_branch;
+        this->left->upper = nullptr;
     }
 
     if(this->right != nullptr)
     {
-        this->right->onBranchOfHigher = BinaryTreeNode::Branch::none_branch;
-        this->right->higher = nullptr;
+        this->right->onBranchOfUpper = BinaryTreeNode::Branch::none_branch;
+        this->right->upper = nullptr;
     }
 
-    switch(this->onBranchOfHigher)
+    switch(this->onBranchOfUpper)
     {
         case BinaryTreeNode::Branch::left_branch:
         {
-            this->higher->left = nullptr;
+            this->upper->left = nullptr;
             break;
         }
 
         case BinaryTreeNode::Branch::right_branch:
         {
-            this->higher->right = nullptr;
+            this->upper->right = nullptr;
             break;
         }
 
@@ -43,11 +45,34 @@ BinaryTreeNode::~BinaryTreeNode()
     }
 }
 
+// ------------------- recursives ---------------------
+
+void BinaryTreeNode::preOrder(function<void(BinaryTreeNode*)> callback)
+{
+    callback(this);
+    if(this->left != nullptr) this->left->preOrder(callback);
+    if(this->right != nullptr) this->right->preOrder(callback);
+}
+
+void BinaryTreeNode::symmetricalOrder(function<void(BinaryTreeNode*)> callback)
+{
+    if(this->left != nullptr) this->left->symmetricalOrder(callback);
+    callback(this);
+    if(this->right != nullptr) this->right->symmetricalOrder(callback);
+}
+
+void BinaryTreeNode::postOrder(function<void(BinaryTreeNode *)> callback)
+{
+    if(this->left != nullptr) this->left->postOrder(callback);
+    if(this->right != nullptr) this->right->postOrder(callback);
+    callback(this);
+}
+
 // -------------------- getters -----------------------
 
-BinaryTreeNode* BinaryTreeNode::getHigher()
+BinaryTreeNode* BinaryTreeNode::getUpper()
 {
-    return this->higher;
+    return this->upper;
 }
 
 BinaryTreeNode* BinaryTreeNode::getLeft()
@@ -60,10 +85,80 @@ BinaryTreeNode* BinaryTreeNode::getRight()
     return this->right;
 }
 
-BinaryTreeNode::Branch BinaryTreeNode::getBranchOfHigher()
+BinaryTreeNode::Branch BinaryTreeNode::getBranchOfUpper()
 {
-    return this->onBranchOfHigher;
+    return this->onBranchOfUpper;
 }
+
+BinaryTreeNode* BinaryTreeNode::getSupertreeRoot()
+{
+    BinaryTreeNode *current = this;
+    while(true)
+    {
+        if(current->getUpper() == nullptr)
+        {
+            return current;
+        }
+        else
+        {
+            current = current->getUpper();
+        }
+    }
+}
+
+long BinaryTreeNode::recursiveGetDistanceDown(BinaryTreeNode *from, BinaryTreeNode *to, long counter)
+{
+    if(from == nullptr) return -1;
+    if(from == to) return counter;
+
+    long l = recursiveGetDistanceDown(from->left, to, counter+1);
+    long r = recursiveGetDistanceDown(from->right, to, counter+1);
+
+    if(l == -1 && r == -1) return -1;
+    else if(l != -1) return l;
+    else if(r != -1) return r;
+}
+
+long BinaryTreeNode::getDistanceTo(BinaryTreeNode *reference)
+{
+    if(reference == nullptr)
+    {
+        throw new InvalidArgsEx("BinaryTreeNode::getDistanceTo", "BinaryTreeNode *reference");
+    }
+
+    BinaryTreeNode *current = this;
+    for(long i = 0; current != nullptr; i++)
+    {
+        if(current == reference)
+        {
+            return i;
+        }
+        current = current->upper;
+    }
+
+    return recursiveGetDistanceDown(this, reference, 0);
+}
+
+BinaryTreeNode* BinaryTreeNode::getDeeperSubtreeLeaf()
+{
+    BinaryTreeNode *deeper = this;
+    long bigger_depth = 0;
+
+    this->postOrder([&](BinaryTreeNode* node)
+    {
+        if(node->isLeaf() == false) return;
+
+        long distance = node->getDistanceTo(this);
+        if(distance > bigger_depth)
+        {
+            bigger_depth = distance;
+            deeper = node;
+        }
+    });
+
+    return deeper;
+}
+
 
 // -------------------- inserters -----------------------
 
@@ -76,8 +171,8 @@ void BinaryTreeNode::insertLeft(BinaryTreeNode *to_insert)
     }
 
     //insert...
-    to_insert->higher = this;
-    to_insert->onBranchOfHigher = left_branch;
+    to_insert->upper = this;
+    to_insert->onBranchOfUpper = left_branch;
     this->left = to_insert;
 
 }
@@ -91,48 +186,25 @@ void BinaryTreeNode::insertRight(BinaryTreeNode *to_insert)
     }
 
     //insert...
-    to_insert->higher = this;
-    to_insert->onBranchOfHigher = right_branch;
+    to_insert->upper = this;
+    to_insert->onBranchOfUpper = right_branch;
     this->right = to_insert;
 }
 
 // ---------------- deleters ---------------------
 
-void BinaryTreeNode::recursiveDeleteTree(BinaryTreeNode *node)
+void BinaryTreeNode::deleteSubtree()
 {
-    if(node == nullptr) return;
-
-    recursiveDeleteTree(node->left);
-    recursiveDeleteTree(node->right);
-
-    if(node->isLeaf())
-    {
-        /*          --- Destructor already do this ----
-
-        if(node->onBranchOfHigher == BinaryTreeNode::Branch::right_branch)
-        {
-            node->higher->right = nullptr;
-        }
-        else if(node->onBranchOfHigher == BinaryTreeNode::Branch::left_branch)
-        {
-            node->higher->left = nullptr;
-        }
-        */
-
-        delete node;
-    }
-}
-
-void BinaryTreeNode::deleteTree()
-{
-    BinaryTreeNode::recursiveDeleteTree(this);
+    if(this->left != nullptr) this->left->deleteSubtree();
+    if(this->right != nullptr) this->right->deleteSubtree();
+    delete this;
 }
 
 // ------------------------ booleans -------------------------
 
 bool BinaryTreeNode::isRoot()
 {
-    return (this->higher == nullptr);
+    return (this->upper == nullptr);
 }
 
 bool BinaryTreeNode::isLeaf()
