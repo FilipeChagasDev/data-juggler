@@ -1,0 +1,199 @@
+\hypertarget{classDataJuggler_1_1BinaryTreeNode}{}\section{Data\+Juggler\+:\+:Binary\+Tree\+Node Class Reference}
+\label{classDataJuggler_1_1BinaryTreeNode}\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+
+
+{\ttfamily \#include $<$treenode.\+hpp$>$}
+
+
+
+Collaboration diagram for Data\+Juggler\+:\+:Binary\+Tree\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{classDataJuggler_1_1BinaryTreeNode__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a3fefd287cd17d15b5905296826eca754}\label{classDataJuggler_1_1BinaryTreeNode_a3fefd287cd17d15b5905296826eca754}} 
+enum {\bfseries Branch} \{ {\bfseries left\+\_\+branch}, 
+{\bfseries right\+\_\+branch}, 
+{\bfseries none\+\_\+branch}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classDataJuggler_1_1BinaryTreeNode_af2995ef47057ef14f617af026998afc1}{$\sim$\+Binary\+Tree\+Node} ()
+\item 
+void \hyperlink{classDataJuggler_1_1BinaryTreeNode_a39df9c1d2ae67bb35323548e83601bd4}{pre\+Order} (function$<$ void(\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$)$>$ callback)
+\item 
+void \hyperlink{classDataJuggler_1_1BinaryTreeNode_a082f4223f8d7d40c5e85a9f2322a2b22}{symmetrical\+Order} (function$<$ void(\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$)$>$ callback)
+\item 
+void \hyperlink{classDataJuggler_1_1BinaryTreeNode_ad52d331c7d393615f76bb18657dc7c0b}{post\+Order} (function$<$ void(\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$)$>$ callback)
+\item 
+void \hyperlink{classDataJuggler_1_1BinaryTreeNode_a65f216d77e7953f02dfa4bc293fd8993}{insert\+Left} (\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$to\+\_\+insert)
+\item 
+void \hyperlink{classDataJuggler_1_1BinaryTreeNode_ac59067ab56902eafb5b7c541276c294c}{insert\+Right} (\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$to\+\_\+insert)
+\item 
+Branch \hyperlink{classDataJuggler_1_1BinaryTreeNode_a98ff5ed818a8a679979adaae76fcbd8a}{get\+Branch\+Of\+Upper} ()
+\item 
+\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ \hyperlink{classDataJuggler_1_1BinaryTreeNode_a07f3536b32e66d434b426f2d4903710a}{get\+Upper} ()
+\item 
+\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ \hyperlink{classDataJuggler_1_1BinaryTreeNode_a9c7bf23457f5a2a39a6b7e5525604e68}{get\+Left} ()
+\item 
+\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ \hyperlink{classDataJuggler_1_1BinaryTreeNode_a0d7d9c5d8cd5033e12f78dfbcb9667a1}{get\+Right} ()
+\item 
+\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ \hyperlink{classDataJuggler_1_1BinaryTreeNode_a257b78d609886933af1ceabb8c5880b0}{get\+Supertree\+Root} ()
+\item 
+\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ \hyperlink{classDataJuggler_1_1BinaryTreeNode_a7e0d717313cf4ca8fe28e9663dd2c299}{get\+Deeper\+Subtree\+Leaf} ()
+\item 
+long \hyperlink{classDataJuggler_1_1BinaryTreeNode_a0ee7e550e37a7882e5bab3be3fac1a42}{get\+Distance\+To} (\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$reference)
+\item 
+bool \hyperlink{classDataJuggler_1_1BinaryTreeNode_a51c9d0cc830439528546be1d2c42ce72}{is\+Root} ()
+\item 
+bool \hyperlink{classDataJuggler_1_1BinaryTreeNode_a6716143fcaf85866773b85f3342114d9}{is\+Leaf} ()
+\item 
+bool \hyperlink{classDataJuggler_1_1BinaryTreeNode_a2ca8921083f09fdc947bfc8be1af834a}{is\+Only} ()
+\item 
+virtual void \hyperlink{classDataJuggler_1_1BinaryTreeNode_a563663d605400e2a928df19fd086bf9a}{delete\+Subtree} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a6c7ea66bec6d5371e4a065b859f53939}\label{classDataJuggler_1_1BinaryTreeNode_a6c7ea66bec6d5371e4a065b859f53939}} 
+static long {\bfseries recursive\+Get\+Distance\+Down} (\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$from, \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$to, long counter=1)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_ac4fc27cfb417375f9b9867f52ec03019}\label{classDataJuggler_1_1BinaryTreeNode_ac4fc27cfb417375f9b9867f52ec03019}} 
+Branch {\bfseries on\+Branch\+Of\+Upper}
+\item 
+\mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a731d7b7e81097ea2d3173717ad272c5f}\label{classDataJuggler_1_1BinaryTreeNode_a731d7b7e81097ea2d3173717ad272c5f}} 
+\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ {\bfseries upper}
+\item 
+\mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a1ea539098abf8cbcb5afdffa9061f2df}\label{classDataJuggler_1_1BinaryTreeNode_a1ea539098abf8cbcb5afdffa9061f2df}} 
+\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ {\bfseries left}
+\item 
+\mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a874efcd449929ca1ac8c881c93621a7f}\label{classDataJuggler_1_1BinaryTreeNode_a874efcd449929ca1ac8c881c93621a7f}} 
+\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ {\bfseries right}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the node of a binary tree, with pointer to left branch, direct branch, and upper node. This class is very basic and should not be instantiated directly. Subclasses of this can be used to enter information (such as numbers, keys, objects) on the node and perform operations such as rotation and sorting on the tree. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_af2995ef47057ef14f617af026998afc1}\label{classDataJuggler_1_1BinaryTreeNode_af2995ef47057ef14f617af026998afc1}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!````~Binary\+Tree\+Node@{$\sim$\+Binary\+Tree\+Node}}
+\index{````~Binary\+Tree\+Node@{$\sim$\+Binary\+Tree\+Node}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{$\sim$\+Binary\+Tree\+Node()}{~BinaryTreeNode()}}
+{\footnotesize\ttfamily Data\+Juggler\+::\+Binary\+Tree\+Node\+::$\sim$\+Binary\+Tree\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+this destructor assign nullptr to all references to this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} in the supertree in which it is inserted. Use very carefully, as the rest of the subtree is not deleted, maying cause a memory leakage. To delete the entire subtree, use the delete\+Subtree function of the same class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a563663d605400e2a928df19fd086bf9a}\label{classDataJuggler_1_1BinaryTreeNode_a563663d605400e2a928df19fd086bf9a}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!delete\+Subtree@{delete\+Subtree}}
+\index{delete\+Subtree@{delete\+Subtree}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{delete\+Subtree()}{deleteSubtree()}}
+{\footnotesize\ttfamily void Data\+Juggler\+::\+Binary\+Tree\+Node\+::delete\+Subtree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function recursively deletes all Binary\+Tree\+Nodes from the subtree of which this is the root. I\+M\+P\+O\+R\+T\+A\+NT\+: After using this function, it is not necessary to use the destructor of this class to delete this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} as this will cause a segmentation fault. \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a98ff5ed818a8a679979adaae76fcbd8a}\label{classDataJuggler_1_1BinaryTreeNode_a98ff5ed818a8a679979adaae76fcbd8a}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!get\+Branch\+Of\+Upper@{get\+Branch\+Of\+Upper}}
+\index{get\+Branch\+Of\+Upper@{get\+Branch\+Of\+Upper}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{get\+Branch\+Of\+Upper()}{getBranchOfUpper()}}
+{\footnotesize\ttfamily Binary\+Tree\+Node\+::\+Branch Data\+Juggler\+::\+Binary\+Tree\+Node\+::get\+Branch\+Of\+Upper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function returns an information of type Binary\+Tree\+Node\+::\+Branch informing which of the two branches (left or right) of the upper \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} has been inserted. \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a7e0d717313cf4ca8fe28e9663dd2c299}\label{classDataJuggler_1_1BinaryTreeNode_a7e0d717313cf4ca8fe28e9663dd2c299}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!get\+Deeper\+Subtree\+Leaf@{get\+Deeper\+Subtree\+Leaf}}
+\index{get\+Deeper\+Subtree\+Leaf@{get\+Deeper\+Subtree\+Leaf}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{get\+Deeper\+Subtree\+Leaf()}{getDeeperSubtreeLeaf()}}
+{\footnotesize\ttfamily \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ Data\+Juggler\+::\+Binary\+Tree\+Node\+::get\+Deeper\+Subtree\+Leaf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function fetches the deepest \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} in the tree whose root is this. \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a0ee7e550e37a7882e5bab3be3fac1a42}\label{classDataJuggler_1_1BinaryTreeNode_a0ee7e550e37a7882e5bab3be3fac1a42}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!get\+Distance\+To@{get\+Distance\+To}}
+\index{get\+Distance\+To@{get\+Distance\+To}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{get\+Distance\+To()}{getDistanceTo()}}
+{\footnotesize\ttfamily long Data\+Juggler\+::\+Binary\+Tree\+Node\+::get\+Distance\+To (\begin{DoxyParamCaption}\item[{\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$}]{reference }\end{DoxyParamCaption})}
+
+This function obtains the distance of this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} to another \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} of the same supertree (which must be passed as argument of this function). If the \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} passed as argument is not part of the same tree as this, the function returns -\/1. \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a9c7bf23457f5a2a39a6b7e5525604e68}\label{classDataJuggler_1_1BinaryTreeNode_a9c7bf23457f5a2a39a6b7e5525604e68}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!get\+Left@{get\+Left}}
+\index{get\+Left@{get\+Left}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{get\+Left()}{getLeft()}}
+{\footnotesize\ttfamily \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ Data\+Juggler\+::\+Binary\+Tree\+Node\+::get\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function gets a pointer to the \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} on the left branch from this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a0d7d9c5d8cd5033e12f78dfbcb9667a1}\label{classDataJuggler_1_1BinaryTreeNode_a0d7d9c5d8cd5033e12f78dfbcb9667a1}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!get\+Right@{get\+Right}}
+\index{get\+Right@{get\+Right}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{get\+Right()}{getRight()}}
+{\footnotesize\ttfamily \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ Data\+Juggler\+::\+Binary\+Tree\+Node\+::get\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function gets a pointer to the \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} on the right branch from this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a257b78d609886933af1ceabb8c5880b0}\label{classDataJuggler_1_1BinaryTreeNode_a257b78d609886933af1ceabb8c5880b0}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!get\+Supertree\+Root@{get\+Supertree\+Root}}
+\index{get\+Supertree\+Root@{get\+Supertree\+Root}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{get\+Supertree\+Root()}{getSupertreeRoot()}}
+{\footnotesize\ttfamily \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ Data\+Juggler\+::\+Binary\+Tree\+Node\+::get\+Supertree\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function gets the root of the supertree on which this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} is inserted. If this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} is the root of the tree itself, this function returns a pointer to it same. \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a07f3536b32e66d434b426f2d4903710a}\label{classDataJuggler_1_1BinaryTreeNode_a07f3536b32e66d434b426f2d4903710a}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!get\+Upper@{get\+Upper}}
+\index{get\+Upper@{get\+Upper}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{get\+Upper()}{getUpper()}}
+{\footnotesize\ttfamily \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$ Data\+Juggler\+::\+Binary\+Tree\+Node\+::get\+Upper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function gets a pointer to the upper \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a65f216d77e7953f02dfa4bc293fd8993}\label{classDataJuggler_1_1BinaryTreeNode_a65f216d77e7953f02dfa4bc293fd8993}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!insert\+Left@{insert\+Left}}
+\index{insert\+Left@{insert\+Left}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{insert\+Left()}{insertLeft()}}
+{\footnotesize\ttfamily void Data\+Juggler\+::\+Binary\+Tree\+Node\+::insert\+Left (\begin{DoxyParamCaption}\item[{\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$}]{to\+\_\+insert }\end{DoxyParamCaption})}
+
+This function inserts a new \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} into the left branch of this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} (from which this function was invoked). \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_ac59067ab56902eafb5b7c541276c294c}\label{classDataJuggler_1_1BinaryTreeNode_ac59067ab56902eafb5b7c541276c294c}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!insert\+Right@{insert\+Right}}
+\index{insert\+Right@{insert\+Right}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{insert\+Right()}{insertRight()}}
+{\footnotesize\ttfamily void Data\+Juggler\+::\+Binary\+Tree\+Node\+::insert\+Right (\begin{DoxyParamCaption}\item[{\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$}]{to\+\_\+insert }\end{DoxyParamCaption})}
+
+This function inserts a new \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} into the right branch of this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} (from which this function was invoked). \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a6716143fcaf85866773b85f3342114d9}\label{classDataJuggler_1_1BinaryTreeNode_a6716143fcaf85866773b85f3342114d9}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!is\+Leaf@{is\+Leaf}}
+\index{is\+Leaf@{is\+Leaf}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{is\+Leaf()}{isLeaf()}}
+{\footnotesize\ttfamily bool Data\+Juggler\+::\+Binary\+Tree\+Node\+::is\+Leaf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns true if this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} is a leaf of the supertree in which it is inserted \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a2ca8921083f09fdc947bfc8be1af834a}\label{classDataJuggler_1_1BinaryTreeNode_a2ca8921083f09fdc947bfc8be1af834a}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!is\+Only@{is\+Only}}
+\index{is\+Only@{is\+Only}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{is\+Only()}{isOnly()}}
+{\footnotesize\ttfamily bool Data\+Juggler\+::\+Binary\+Tree\+Node\+::is\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns true if this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} is a root and a leaf (does not have upper or lower Binary\+Tree\+Nodes). \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a51c9d0cc830439528546be1d2c42ce72}\label{classDataJuggler_1_1BinaryTreeNode_a51c9d0cc830439528546be1d2c42ce72}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!is\+Root@{is\+Root}}
+\index{is\+Root@{is\+Root}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{is\+Root()}{isRoot()}}
+{\footnotesize\ttfamily bool Data\+Juggler\+::\+Binary\+Tree\+Node\+::is\+Root (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns true if this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} is the root of a tree \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_ad52d331c7d393615f76bb18657dc7c0b}\label{classDataJuggler_1_1BinaryTreeNode_ad52d331c7d393615f76bb18657dc7c0b}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!post\+Order@{post\+Order}}
+\index{post\+Order@{post\+Order}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{post\+Order()}{postOrder()}}
+{\footnotesize\ttfamily void Data\+Juggler\+::\+Binary\+Tree\+Node\+::post\+Order (\begin{DoxyParamCaption}\item[{function$<$ void(\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$)$>$}]{callback }\end{DoxyParamCaption})}
+
+This function recursively traverses all Binary\+Tree\+Nodes of the tree in postorder from this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} (from which this function was invoked). For each node picked on the tree, the callback function is called and a pointer to node is passed as an argument. \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a39df9c1d2ae67bb35323548e83601bd4}\label{classDataJuggler_1_1BinaryTreeNode_a39df9c1d2ae67bb35323548e83601bd4}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!pre\+Order@{pre\+Order}}
+\index{pre\+Order@{pre\+Order}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{pre\+Order()}{preOrder()}}
+{\footnotesize\ttfamily void Data\+Juggler\+::\+Binary\+Tree\+Node\+::pre\+Order (\begin{DoxyParamCaption}\item[{function$<$ void(\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$)$>$}]{callback }\end{DoxyParamCaption})}
+
+This function recursively traverses all Binary\+Tree\+Nodes of the tree in preorder (left to right) from this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} (from which this function was invoked). For each node picked on the tree, the callback function is called and a pointer to node is passed as an argument. \mbox{\Hypertarget{classDataJuggler_1_1BinaryTreeNode_a082f4223f8d7d40c5e85a9f2322a2b22}\label{classDataJuggler_1_1BinaryTreeNode_a082f4223f8d7d40c5e85a9f2322a2b22}} 
+\index{Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}!symmetrical\+Order@{symmetrical\+Order}}
+\index{symmetrical\+Order@{symmetrical\+Order}!Data\+Juggler\+::\+Binary\+Tree\+Node@{Data\+Juggler\+::\+Binary\+Tree\+Node}}
+\subsubsection{\texorpdfstring{symmetrical\+Order()}{symmetricalOrder()}}
+{\footnotesize\ttfamily void Data\+Juggler\+::\+Binary\+Tree\+Node\+::symmetrical\+Order (\begin{DoxyParamCaption}\item[{function$<$ void(\hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} $\ast$)$>$}]{callback }\end{DoxyParamCaption})}
+
+This function recursively traverses all Binary\+Tree\+Nodes of the tree in symmetric order from this \hyperlink{classDataJuggler_1_1BinaryTreeNode}{Binary\+Tree\+Node} (from which this function was invoked). For each node picked on the tree, the callback function is called and a pointer to node is passed as an argument. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/treenode.\+hpp\item 
+src/treenode.\+cpp\end{DoxyCompactItemize}

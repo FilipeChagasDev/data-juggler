@@ -2,16 +2,16 @@
 
 namespace DataJuggler {
 
-DamagedLinearEx::DamagedLinearEx(LinearNode *node_where_throwed)
-    :Exception(DamagedLinearEx::defaultCode, "Damaged Linear Exception",
-               "A fault in the linear list structure was detected. Analyze the source code of the LinearNode class or its subclass.")
+DamagedLinkedListEx::DamagedLinkedListEx(LinkedListNode *node_where_throwed)
+    :Exception(DamagedLinkedListEx::defaultCode, "Damaged Linked List Exception",
+               "A fault in the linked list structure was detected. Analyze the source code of the LinkedListNode class or its subclass.")
 {
     this->node_where_throwed = node_where_throwed;
 }
 
 // ---------- Constructors ------------
 
-LinearNode::LinearNode(LinearNode::Header *extern_header)
+LinkedListNode::LinkedListNode(LinkedListNode::Header *extern_header)
 {
     if(extern_header != nullptr)
     {
@@ -27,7 +27,7 @@ LinearNode::LinearNode(LinearNode::Header *extern_header)
     this->previous = nullptr;
 }
 
-LinearNode::LinearNode(LinearNode::Header &extern_header)
+LinkedListNode::LinkedListNode(LinkedListNode::Header &extern_header)
 {
     if(extern_header.first == nullptr && extern_header.last == nullptr)
     {
@@ -42,21 +42,21 @@ LinearNode::LinearNode(LinearNode::Header &extern_header)
 
 // ------------ Destructors -------------
 
-LinearNode::~LinearNode()
+LinkedListNode::~LinkedListNode()
 {
     this->remove();
 }
 
 // ------------- Cloners -----------------
 
-void LinearNode::CloneFrom(LinearNode *to_copy)
+void LinkedListNode::CloneFrom(LinkedListNode *to_copy)
 {
     this->extern_header = to_copy->extern_header;
     this->next = to_copy->next;
     this->previous = to_copy->previous;
 }
 
-void LinearNode::CloneFrom(LinearNode &to_copy)
+void LinkedListNode::CloneFrom(LinkedListNode &to_copy)
 {
     this->extern_header = to_copy.extern_header;
     this->next = to_copy.next;
@@ -65,7 +65,7 @@ void LinearNode::CloneFrom(LinearNode &to_copy)
 
 // ------------- Inserters ---------------
 
-void LinearNode::insertAfter(LinearNode *to_insert)
+void LinkedListNode::insertAfter(LinkedListNode *to_insert)
 {
     bool im_the_last = (this->next == nullptr);
     bool have_header = (this->extern_header != nullptr);
@@ -73,7 +73,7 @@ void LinearNode::insertAfter(LinearNode *to_insert)
     //check for errors
     if(to_insert == nullptr)
     {
-        throw new InvalidArgsEx("LinearNode::insertAfter", "LinearNode *to_insert");
+        throw new InvalidArgsEx("LinkedListNode::insertAfter", "LinkedListNode *to_insert");
     }
 
     this->checkIntegrity();
@@ -97,7 +97,7 @@ void LinearNode::insertAfter(LinearNode *to_insert)
 }
 
 
-void LinearNode::insertBefore(LinearNode *to_insert)
+void LinkedListNode::insertBefore(LinkedListNode *to_insert)
 {
     bool im_the_first = (this->previous == nullptr);
     bool have_header = (this->extern_header != nullptr);
@@ -105,7 +105,7 @@ void LinearNode::insertBefore(LinearNode *to_insert)
     //check for errors
     if(to_insert == nullptr)
     {
-        throw new InvalidArgsEx("LinearNode::insertAfter", "LinearNode *to_insert");
+        throw new InvalidArgsEx("LinkedListNode::insertAfter", "LinkedListNode *to_insert");
     }
 
     this->checkIntegrity();
@@ -127,7 +127,7 @@ void LinearNode::insertBefore(LinearNode *to_insert)
     if(have_header) this->extern_header->counter++;
 }
 
-void LinearNode::remove()
+void LinkedListNode::remove()
 {
     bool im_the_first = (this->previous == nullptr);
     bool im_the_last = (this->next == nullptr);
@@ -148,8 +148,8 @@ void LinearNode::remove()
     }
 
     //lets go to what matters...
-    LinearNode *my_next = this->next;
-    LinearNode *my_previous = this->previous;
+    LinkedListNode *my_next = this->next;
+    LinkedListNode *my_previous = this->previous;
 
     if(!im_the_first) my_previous->next = my_next; //do it whether this is not the first
     else if(have_header) this->extern_header->first = my_next; //do it whether this is the first
@@ -162,19 +162,19 @@ void LinearNode::remove()
     if(have_header) this->extern_header->counter--;
 }
 
-void LinearNode::moveToAfterOf(LinearNode *ref_node)
+void LinkedListNode::moveToAfterOf(LinkedListNode *ref_node)
 {
     this->remove();
     ref_node->insertAfter(this);
 }
 
-void LinearNode::moveToBeforeOf(LinearNode *ref_node)
+void LinkedListNode::moveToBeforeOf(LinkedListNode *ref_node)
 {
     this->remove();
     ref_node->insertBefore(this);
 }
 
-void LinearNode::checkIntegrity()
+void LinkedListNode::checkIntegrity()
 {
     bool im_the_first = (this->previous == nullptr);
     bool im_the_last = (this->next == nullptr);
@@ -184,24 +184,24 @@ void LinearNode::checkIntegrity()
     {
         if(im_the_first && this->extern_header->first != this)
         {
-            throw new DamagedLinearEx(this);
+            throw new DamagedLinkedListEx(this);
         }
 
         if(im_the_last && this->extern_header->last != this)
         {
-            throw new DamagedLinearEx(this);
+            throw new DamagedLinkedListEx(this);
         }
     }
 }
 
 // ------------------ getters -----------------------
 
-LinearNode *LinearNode::getNext()
+LinkedListNode *LinkedListNode::getNext()
 {
     return this->next;
 }
 
-LinearNode *LinearNode::getPrevious()
+LinkedListNode *LinkedListNode::getPrevious()
 {
     return this->previous;
 }
