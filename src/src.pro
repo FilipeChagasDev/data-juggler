@@ -7,10 +7,10 @@ SOURCES += \
     exception.cpp \
     stringhash.cpp \
     treenode.cpp \
-    linkedlistitem.cpp \
     linkedlistnode.cpp \
     main_test.cpp \
-    list.cpp
+    linkedlistitem.cxx \
+    list.cxx
 
 HEADERS += \
     exception.hpp \

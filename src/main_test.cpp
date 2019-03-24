@@ -2,6 +2,7 @@
 #include "stringhash.hpp"
 #include "linkedlistnode.hpp"
 #include "treenode.hpp"
+#include "list.hpp"
 #include <cstdlib>
 
 /*
@@ -15,13 +16,34 @@ using namespace std;
 void manual_test_string_hash_generator();
 void manual_test_linear();
 void manual_test_treenode();
+void manual_test_list();
 
 int main()
 {
     //manual_test_string_hash_generator();
     //manual_test_linear();
-    manual_test_treenode();
+    //manual_test_treenode();
+     manual_test_list();
     return 0;
+}
+
+void manual_test_list()
+{
+    DataJuggler::List<int> *list = new DataJuggler::List<int>();
+
+    for(int i = 0; i < 5; i++)
+    {
+        list->insertBegin(5 - i);
+        list->insertEnd(5 + i + 1);
+    }
+
+    for(DataJuggler::LinkedListItem<int> *i = list->getFirstNode();
+        i != nullptr;
+        i = static_cast<DataJuggler::LinkedListItem<int>*>(i->getNext()))
+    {
+        cout << i->data << "<->";
+    }
+
 }
 
 // ------- BinaryTreeNode tester --------

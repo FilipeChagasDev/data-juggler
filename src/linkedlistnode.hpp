@@ -72,6 +72,9 @@ class LinkedListNode
         /** Get the previous node of this in the list. */
         LinkedListNode *getPrevious();
 
+        /** Get the list header */
+        LinkedListNode::Header *getHeader();
+
         /** Checks for logical errors in the linked list. */
         void checkIntegrity();
 };

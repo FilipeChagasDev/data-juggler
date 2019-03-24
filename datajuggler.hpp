@@ -5,5 +5,7 @@
 #include "src/linearnode.hpp"
 #include "src/stringhash.hpp"
 #include "src/treenode.hpp"
+#include "src/linkedlistitem.hpp"
+#include "src/list.hpp"
 
 #endif

@@ -1,5 +1,5 @@
-#ifndef LINKEDLISTITEM_H
-#define LINKEDLISTITEM_H
+#ifndef LINKEDLISTITEM_HPP
+#define LINKEDLISTITEM_HPP
 
 #include "linkedlistnode.hpp"
 #include "exception.hpp"
@@ -21,4 +21,7 @@ public:
 };
 
 } //end of namespace
+
+#include "linkedlistitem.cxx"
+
 #endif // LINKEDLISTITEM_H

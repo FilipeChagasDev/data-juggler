@@ -1,5 +1,5 @@
-#ifndef LIST_HPP
-#define LIST_HPP
+#ifndef DJ_LIST_HPP
+#define DJ_LIST_HPP
 
 #include "linkedlistitem.hpp"
 #include "linkedlistnode.hpp"
@@ -9,7 +9,7 @@ namespace DataJuggler {
 
 /** This function represents a linked list of data */
 template<typename datatype>
-class List : LinkedListNode::Header
+class List : public LinkedListNode::Header
 {
 public:
     List();
@@ -43,5 +43,7 @@ public:
 };
 
 }//end of namespace
+
+#include "list.cxx"
 
 #endif // LIST_HPP

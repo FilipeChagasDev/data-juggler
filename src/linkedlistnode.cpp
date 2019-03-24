@@ -220,4 +220,9 @@ LinkedListNode *LinkedListNode::getPrevious()
     return this->previous;
 }
 
+LinkedListNode::Header* LinkedListNode::getHeader()
+{
+    return  this->extern_header;
+}
+
 } //end of DataJuggler namespace

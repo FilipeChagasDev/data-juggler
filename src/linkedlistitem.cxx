@@ -1,3 +1,7 @@
+#ifndef LINKEDLISTITEM_CXX
+#define LINKEDLISTITEM_CXX
+#
+
 #include "linkedlistitem.hpp"
 
 namespace DataJuggler {
@@ -21,5 +25,6 @@ void LinkedListItem<datatype>::CloneFrom(LinkedListNode *to_copy)
     }
 }
 
-
 }//end of namespace
+
+#endif
