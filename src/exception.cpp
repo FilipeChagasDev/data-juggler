@@ -12,7 +12,7 @@ InvalidArgsEx::InvalidArgsEx(string function_name, string param_name)
     :Exception (InvalidArgsEx::defaultCode, "Invalid Arguments Exceptions", "A function that received an invalid argument threw this exception")
 {
     this->function_name = function_name;
-    this->param_name = param_name;
+    this->argument_info = param_name;
 }
 
 }//end of namespace

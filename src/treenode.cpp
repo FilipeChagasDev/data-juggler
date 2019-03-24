@@ -123,7 +123,7 @@ long BinaryTreeNode::getDistanceTo(BinaryTreeNode *reference)
 {
     if(reference == nullptr)
     {
-        throw new InvalidArgsEx("BinaryTreeNode::getDistanceTo", "BinaryTreeNode *reference");
+        throw new InvalidArgsEx("BinaryTreeNode::getDistanceTo", "*reference is null");
     }
 
     BinaryTreeNode *current = this;
@@ -167,7 +167,7 @@ void BinaryTreeNode::insertLeft(BinaryTreeNode *to_insert)
     //check for errors
     if(to_insert == nullptr)
     {
-        throw new InvalidArgsEx("BinaryTreeNode::insertLeft", "BinaryTreeNode *to_insert");
+        throw new InvalidArgsEx("BinaryTreeNode::insertLeft", "*to_insert is null");
     }
 
     //insert...
@@ -182,7 +182,7 @@ void BinaryTreeNode::insertRight(BinaryTreeNode *to_insert)
     //check for errors
     if(to_insert == nullptr)
     {
-        throw new InvalidArgsEx("BinaryTreeNode::insertLeft", "BinaryTreeNode *to_insert");
+        throw new InvalidArgsEx("BinaryTreeNode::insertLeft", "*to_insert is null");
     }
 
     //insert...

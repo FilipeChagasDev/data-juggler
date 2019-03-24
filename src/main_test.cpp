@@ -1,6 +1,6 @@
 #include <iostream>
 #include "stringhash.hpp"
-#include "linearnode.hpp"
+#include "linkedlistnode.hpp"
 #include "treenode.hpp"
 #include <cstdlib>
 
@@ -197,6 +197,7 @@ void manual_test_linear()
 {
     DataJuggler::LinkedListNode::Header *h = new DataJuggler::LinkedListNode::Header();
     IntNode *curnode = new IntNode(h);
+    curnode->insertItSingle();
     curnode->data = 0;
     int answer;
 

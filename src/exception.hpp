@@ -5,6 +5,7 @@
 
 namespace DataJuggler {
 
+/** This class represents an simple exception */
 class Exception
 {
     public:
@@ -14,13 +15,13 @@ class Exception
         Exception(unsigned long long code, string name, string description);
 };
 
-
+/** This class represents an exception that is thrown a function receives an invalid argument */
 class InvalidArgsEx : public Exception
 {
     public:
      string function_name;
-     string param_name;
-     InvalidArgsEx(string function_name, string param_name);
+     string argument_info;
+     InvalidArgsEx(string function_name, string argument_info);
      static const unsigned long long defaultCode = 5267;
 };
 
