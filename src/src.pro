@@ -10,7 +10,8 @@ SOURCES += \
     linkedlistnode.cpp \
     main_test.cpp \
     linkedlistitem.cxx \
-    list.cxx
+    list.cxx \
+    stack.cxx
 
 HEADERS += \
     exception.hpp \
@@ -20,4 +21,5 @@ HEADERS += \
     lambda.hpp \
     linkedlistnode.hpp \
     linkedlistitem.hpp \
-    list.hpp
+    list.hpp \
+    stack.hpp

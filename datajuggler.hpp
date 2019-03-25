@@ -7,5 +7,6 @@
 #include "src/treenode.hpp"
 #include "src/linkedlistitem.hpp"
 #include "src/list.hpp"
+#include "src/stack.hpp"
 
 #endif

@@ -16,8 +16,6 @@ public:
 
     /** This constructor receives, as an argument, a pointer to the list header and a data to the node */
     LinkedListItem(LinkedListNode::Header *header, datatype data);
-    /** Make it a copy of another LinkedListItem (object from pointer)*/
-    virtual void CloneFrom(LinkedListNode *to_copy);
 };
 
 } //end of namespace

@@ -11,6 +11,7 @@ var searchData=
   ['insertright',['insertRight',['../classDataJuggler_1_1BinaryTreeNode.html#ac59067ab56902eafb5b7c541276c294c',1,'DataJuggler::BinaryTreeNode']]],
   ['isempty',['isEmpty',['../classDataJuggler_1_1List.html#af0887bec50f4214b09c44b93265ae502',1,'DataJuggler::List']]],
   ['isleaf',['isLeaf',['../classDataJuggler_1_1BinaryTreeNode.html#a6716143fcaf85866773b85f3342114d9',1,'DataJuggler::BinaryTreeNode']]],
+  ['islinked',['isLinked',['../classDataJuggler_1_1LinkedListNode.html#a43466e33ccca22ec79113c8a6ef048f2',1,'DataJuggler::LinkedListNode']]],
   ['isonly',['isOnly',['../classDataJuggler_1_1BinaryTreeNode.html#a2ca8921083f09fdc947bfc8be1af834a',1,'DataJuggler::BinaryTreeNode']]],
   ['isroot',['isRoot',['../classDataJuggler_1_1BinaryTreeNode.html#a51c9d0cc830439528546be1d2c42ce72',1,'DataJuggler::BinaryTreeNode']]]
 ];
