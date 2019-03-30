@@ -4,6 +4,7 @@
 <area shape="rect" id="node4" href="$classDataJuggler_1_1LinkedListNodeAlreadyLinkedEx.html" title="DataJuggler::LinkedListNode\lAlreadyLinkedEx" alt="" coords="233,123,424,164"/>
 <area shape="rect" id="node5" href="$classDataJuggler_1_1LinkedListNodeWithoutHeaderEx.html" title="DataJuggler::LinkedListNode\lWithoutHeaderEx" alt="" coords="233,188,424,229"/>
 <area shape="rect" id="node6" href="$classDataJuggler_1_1LinkedListNotEmptyEx.html" title="DataJuggler::LinkedListNot\lEmptyEx" alt="" coords="239,253,419,295"/>
-<area shape="rect" id="node7" href="$classDataJuggler_1_1StringHashOutOfSetEx.html" title="DataJuggler::StringHashOut\lOfSetEx" alt="" coords="235,319,422,360"/>
-<area shape="rect" id="node8" href="$classDataJuggler_1_1StringHashOverflowEx.html" title="DataJuggler::StringHashOverflowEx" alt="" coords="212,385,445,411"/>
+<area shape="rect" id="node7" href="$classDataJuggler_1_1NullIteratorEx.html" title="DataJuggler::NullIteratorEx" alt="" coords="239,319,419,346"/>
+<area shape="rect" id="node8" href="$classDataJuggler_1_1StringHashOutOfSetEx.html" title="DataJuggler::StringHashOut\lOfSetEx" alt="" coords="235,371,422,412"/>
+<area shape="rect" id="node9" href="$classDataJuggler_1_1StringHashOverflowEx.html" title="DataJuggler::StringHashOverflowEx" alt="" coords="212,437,445,463"/>
 </map>

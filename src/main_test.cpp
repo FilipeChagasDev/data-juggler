@@ -3,6 +3,8 @@
 #include "linkedlistnode.hpp"
 #include "treenode.hpp"
 #include "list.hpp"
+#include "stack.hpp"
+#include "queue.hpp"
 #include <cstdlib>
 
 /*
@@ -17,15 +19,84 @@ void manual_test_string_hash_generator();
 void manual_test_linear();
 void manual_test_treenode();
 void manual_test_list();
+void manual_test_stack();
+void manual_test_queue();
 
 int main()
 {
     //manual_test_string_hash_generator();
     //manual_test_linear();
     //manual_test_treenode();
-     manual_test_list();
+    //manual_test_list();
+    //manual_test_stack();
+    manual_test_queue();
+
     return 0;
 }
+
+void manual_test_queue()
+{
+    DataJuggler::Queue<int> *queue = new DataJuggler::Queue<int>();
+
+    for(int i = 0; i < 10; i++)
+    {
+        cout << "push: " << i << endl;
+        queue->push(i);
+        for(DataJuggler::LinkedListItem<int> *j = queue->getFirstNode();
+            j != nullptr; DataJuggler::LinkedListItem<int>::goForward(&j))
+        {
+            cout << j->data << "<->";
+        }
+        cout << endl;
+    }
+
+    cout << "------------------------------" << endl;
+
+    for(int i = 0; i < 10; i++)
+    {
+        for(DataJuggler::LinkedListItem<int> *j = queue->getFirstNode();
+            j != nullptr; DataJuggler::LinkedListItem<int>::goForward(&j))
+        {
+            cout << j->data << "<->";
+        }
+
+        cout << endl << "peek: " << queue->peek() << endl;
+        cout << "pop: " << queue->pop() << endl;
+    }
+}
+
+void manual_test_stack()
+{
+    DataJuggler::Stack<int> *stack = new DataJuggler::Stack<int>();
+
+    for(int i = 0; i < 10; i++)
+    {
+        cout << "push: " << i << endl;
+        stack->push(i);
+        for(DataJuggler::LinkedListItem<int> *j = stack->getFirstNode();
+            j != nullptr; DataJuggler::LinkedListItem<int>::goForward(&j))
+        {
+            cout << j->data << "<->";
+        }
+        cout << endl;
+    }
+
+    cout << "------------------------------" << endl;
+
+    for(int i = 0; i < 10; i++)
+    {
+        for(DataJuggler::LinkedListItem<int> *j = stack->getFirstNode();
+            j != nullptr; DataJuggler::LinkedListItem<int>::goForward(&j))
+        {
+            cout << j->data << "<->";
+        }
+
+        cout << endl << "peek: " << stack->peek() << endl;
+        cout << "pop: " << stack->pop() << endl;
+    }
+}
+
+// ------------ List ------------------
 
 void manual_test_list()
 {

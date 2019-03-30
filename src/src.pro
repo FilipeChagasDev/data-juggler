@@ -8,10 +8,7 @@ SOURCES += \
     stringhash.cpp \
     treenode.cpp \
     linkedlistnode.cpp \
-    main_test.cpp \
-    linkedlistitem.cxx \
-    list.cxx \
-    stack.cxx
+    main_test.cpp
 
 HEADERS += \
     exception.hpp \
@@ -22,4 +19,5 @@ HEADERS += \
     linkedlistnode.hpp \
     linkedlistitem.hpp \
     list.hpp \
-    stack.hpp
+    stack.hpp \
+    queue.hpp

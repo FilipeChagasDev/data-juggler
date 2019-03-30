@@ -12,5 +12,7 @@ var searchData=
   ['getprevious',['getPrevious',['../classDataJuggler_1_1LinkedListNode.html#a12df61829bc55f904a6c7e3c71ab0cdd',1,'DataJuggler::LinkedListNode']]],
   ['getright',['getRight',['../classDataJuggler_1_1BinaryTreeNode.html#a0d7d9c5d8cd5033e12f78dfbcb9667a1',1,'DataJuggler::BinaryTreeNode']]],
   ['getsupertreeroot',['getSupertreeRoot',['../classDataJuggler_1_1BinaryTreeNode.html#a257b78d609886933af1ceabb8c5880b0',1,'DataJuggler::BinaryTreeNode']]],
-  ['getupper',['getUpper',['../classDataJuggler_1_1BinaryTreeNode.html#a07f3536b32e66d434b426f2d4903710a',1,'DataJuggler::BinaryTreeNode']]]
+  ['getupper',['getUpper',['../classDataJuggler_1_1BinaryTreeNode.html#a07f3536b32e66d434b426f2d4903710a',1,'DataJuggler::BinaryTreeNode']]],
+  ['goback',['goBack',['../classDataJuggler_1_1LinkedListItem.html#ae8cbb2e46ece362466b1011a5a6997ec',1,'DataJuggler::LinkedListItem']]],
+  ['goforward',['goForward',['../classDataJuggler_1_1LinkedListItem.html#aedc6ed7659de943b6fa1ff3007aeae5d',1,'DataJuggler::LinkedListItem']]]
 ];

@@ -8,5 +8,6 @@
 #include "src/linkedlistitem.hpp"
 #include "src/list.hpp"
 #include "src/stack.hpp"
+#include "src/queue.hpp"
 
 #endif

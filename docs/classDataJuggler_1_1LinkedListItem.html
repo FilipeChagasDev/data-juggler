@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classDataJuggler_1_1LinkedListItem-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -124,6 +125,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac178b6c57266b64be44d3b7aff54e6b8 inherit pub_methods_classDataJuggler_1_1LinkedListNode"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1LinkedListNode.html#ac178b6c57266b64be44d3b7aff54e6b8">checkIntegrity</a> ()</td></tr>
 <tr class="separator:ac178b6c57266b64be44d3b7aff54e6b8 inherit pub_methods_classDataJuggler_1_1LinkedListNode"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aedc6ed7659de943b6fa1ff3007aeae5d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1LinkedListItem.html#aedc6ed7659de943b6fa1ff3007aeae5d">goForward</a> (<a class="el" href="classDataJuggler_1_1LinkedListItem.html">LinkedListItem</a>&lt; datatype &gt; **ptr)</td></tr>
+<tr class="separator:aedc6ed7659de943b6fa1ff3007aeae5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8cbb2e46ece362466b1011a5a6997ec"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1LinkedListItem.html#ae8cbb2e46ece362466b1011a5a6997ec">goBack</a> (<a class="el" href="classDataJuggler_1_1LinkedListItem.html">LinkedListItem</a>&lt; datatype &gt; **ptr)</td></tr>
+<tr class="separator:ae8cbb2e46ece362466b1011a5a6997ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa8c8eb05af5f082694f3649bdcd25a69"><td class="memItemLeft" align="right" valign="top"><a id="aa8c8eb05af5f082694f3649bdcd25a69"></a>
@@ -183,9 +191,67 @@ template&lt;typename datatype &gt; </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae8cbb2e46ece362466b1011a5a6997ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8cbb2e46ece362466b1011a5a6997ec">&#9670;&nbsp;</a></span>goBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename datatype &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDataJuggler_1_1LinkedListItem.html">DataJuggler::LinkedListItem</a>&lt; datatype &gt;::goBack </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDataJuggler_1_1LinkedListItem.html">LinkedListItem</a>&lt; datatype &gt; **&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>It does a resembling goForward operation, with the difference that it walks backwards with the iterator instead of walking forward. </p>
+
+</div>
+</div>
+<a id="aedc6ed7659de943b6fa1ff3007aeae5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc6ed7659de943b6fa1ff3007aeae5d">&#9670;&nbsp;</a></span>goForward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename datatype &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDataJuggler_1_1LinkedListItem.html">DataJuggler::LinkedListItem</a>&lt; datatype &gt;::goForward </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDataJuggler_1_1LinkedListItem.html">LinkedListItem</a>&lt; datatype &gt; **&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This static function receives as an argument a pointer-to-pointer that references a <a class="el" href="classDataJuggler_1_1LinkedListItem.html">LinkedListItem</a> and causes this pointer-to-pointer to refer to the next <a class="el" href="classDataJuggler_1_1LinkedListItem.html">LinkedListItem</a>. It is useful in iterative algorithms, in which there is an iterator pointer, which "advances" its reference to each repetition of the algorithm using a "node &lt;- node.next" operation. The goFoward function does this operation "node &lt;- node.next" internally, with the iterator that it received by reference as argument. Suppose the iterator pointer is declared as "LinkedListItem&lt;int&gt; *i = list-&gt;getFirstNode ()" ... the goForward function should be used in this case as follows: "LinkedListItem&lt;int&gt;::goForward(&amp;i)". </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="linkedlistitem_8hpp_source.html">linkedlistitem.hpp</a></li>
-<li>src/linkedlistitem.cxx</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
