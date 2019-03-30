@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7ebinarytreenode',['~BinaryTreeNode',['../classDataJuggler_1_1BinaryTreeNode.html#af2995ef47057ef14f617af026998afc1',1,'DataJuggler::BinaryTreeNode']]]
+  ['remove',['remove',['../classDataJuggler_1_1LinkedListNode.html#a007fd147dbf3ca2d83a7c40d5181c26c',1,'DataJuggler::LinkedListNode']]]
 ];

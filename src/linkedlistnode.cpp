@@ -1,6 +1,18 @@
-#include "linearnode.hpp"
+#include "linkedlistnode.hpp"
 
 namespace DataJuggler {
+
+LinkedListNodeAlreadyLinkedEx::LinkedListNodeAlreadyLinkedEx()
+    :Exception (LinkedListNodeAlreadyLinkedEx::defaultCode, "Linked List Node Already Linked Exception",
+                "Node is already linked in the list. Is necessary to remove it from the list before inserting it again")
+{
+}
+
+LinkedListNodeWithoutHeaderEx::LinkedListNodeWithoutHeaderEx()
+    :Exception (LinkedListNodeWithoutHeaderEx::defaultCode, "Linked List Node Without Header Exception",
+                "node has no header and the program attempted to perform an operation with the node that requires header")
+{
+}
 
 DamagedLinkedListEx::DamagedLinkedListEx(LinkedListNode *node_where_throwed)
     :Exception(DamagedLinkedListEx::defaultCode, "Damaged Linked List Exception",
@@ -9,35 +21,35 @@ DamagedLinkedListEx::DamagedLinkedListEx(LinkedListNode *node_where_throwed)
     this->node_where_throwed = node_where_throwed;
 }
 
+LinkedListNotEmptyEx::LinkedListNotEmptyEx()
+    :Exception(LinkedListNotEmptyEx::defaultCode, "Linked List Not Empty Exception",
+               "The program tried to perform an operation that is only allowed when the list is empty, but the list is not empty.")
+{
+}
+
+LinkedListNode::Header::Header()
+{
+    this->first = nullptr;
+    this->last = nullptr;
+    this->counter = 0;
+}
+
 // ---------- Constructors ------------
 
 LinkedListNode::LinkedListNode(LinkedListNode::Header *extern_header)
 {
-    if(extern_header != nullptr)
-    {
-        if(extern_header->first == nullptr && extern_header->last == nullptr)
-        {
-            extern_header->first = this;
-            extern_header->last = this;
-        }
-    }
-
     this->extern_header = extern_header;
     this->next = nullptr;
     this->previous = nullptr;
+    this->linked = false;
 }
 
 LinkedListNode::LinkedListNode(LinkedListNode::Header &extern_header)
 {
-    if(extern_header.first == nullptr && extern_header.last == nullptr)
-    {
-        extern_header.first = this;
-        extern_header.last = this;
-    }
-
     this->extern_header = &extern_header;
     this->next = nullptr;
     this->previous = nullptr;
+    this->linked = false;
 }
 
 // ------------ Destructors -------------
@@ -47,33 +59,43 @@ LinkedListNode::~LinkedListNode()
     this->remove();
 }
 
-// ------------- Cloners -----------------
-
-void LinkedListNode::CloneFrom(LinkedListNode *to_copy)
-{
-    this->extern_header = to_copy->extern_header;
-    this->next = to_copy->next;
-    this->previous = to_copy->previous;
-}
-
-void LinkedListNode::CloneFrom(LinkedListNode &to_copy)
-{
-    this->extern_header = to_copy.extern_header;
-    this->next = to_copy.next;
-    this->previous = to_copy.previous;
-}
-
 // ------------- Inserters ---------------
+
+void LinkedListNode::insertItSingle()
+{
+    if(this->linked == true) throw new LinkedListNodeAlreadyLinkedEx();
+
+    if(this->extern_header != nullptr)
+    {
+        if(this->extern_header->first == nullptr && this->extern_header->last == nullptr)
+        {
+            this->extern_header->first = this;
+            this->extern_header->last = this;
+            this->linked = true;
+            this->extern_header->counter++;
+        }
+        else
+        {
+            throw new LinkedListNotEmptyEx();
+        }
+    }
+    else
+    {
+        throw new LinkedListNodeWithoutHeaderEx();
+    }
+}
 
 void LinkedListNode::insertAfter(LinkedListNode *to_insert)
 {
+    if(to_insert->linked == true) throw new LinkedListNodeAlreadyLinkedEx();
+
     bool im_the_last = (this->next == nullptr);
     bool have_header = (this->extern_header != nullptr);
 
     //check for errors
     if(to_insert == nullptr)
     {
-        throw new InvalidArgsEx("LinkedListNode::insertAfter", "LinkedListNode *to_insert");
+        throw new InvalidArgsEx("LinkedListNode::insertAfter", "*to_insert is null");
     }
 
     this->checkIntegrity();
@@ -94,18 +116,21 @@ void LinkedListNode::insertAfter(LinkedListNode *to_insert)
 
     this->next = to_insert;
     if(have_header) this->extern_header->counter++;
+    to_insert->linked = true;
 }
 
 
 void LinkedListNode::insertBefore(LinkedListNode *to_insert)
 {
+    if(to_insert->linked == true) throw new LinkedListNodeAlreadyLinkedEx();
+
     bool im_the_first = (this->previous == nullptr);
     bool have_header = (this->extern_header != nullptr);
 
     //check for errors
     if(to_insert == nullptr)
     {
-        throw new InvalidArgsEx("LinkedListNode::insertAfter", "LinkedListNode *to_insert");
+        throw new InvalidArgsEx("LinkedListNode::insertAfter", "*to_insert is null");
     }
 
     this->checkIntegrity();
@@ -125,27 +150,19 @@ void LinkedListNode::insertBefore(LinkedListNode *to_insert)
 
     this->previous = to_insert;
     if(have_header) this->extern_header->counter++;
+    to_insert->linked = true;
 }
 
 void LinkedListNode::remove()
 {
+    if(this->linked == false) return; //node not included or already removed
+
     bool im_the_first = (this->previous == nullptr);
     bool im_the_last = (this->next == nullptr);
     bool have_header = (this->extern_header != nullptr);
 
     //check for errors
-    if(have_header)
-    {
-        if(im_the_first && this->extern_header->first != this)
-        {
-            throw; //TODO throws exception object here
-        }
-
-        if(im_the_last && this->extern_header->last != this)
-        {
-            throw; //TODO throws exception object here
-        }
-    }
+    this->checkIntegrity();
 
     //lets go to what matters...
     LinkedListNode *my_next = this->next;
@@ -159,6 +176,7 @@ void LinkedListNode::remove()
 
     this->next = nullptr;
     this->previous = nullptr;
+    this->linked = false;
     if(have_header) this->extern_header->counter--;
 }
 
@@ -194,6 +212,13 @@ void LinkedListNode::checkIntegrity()
     }
 }
 
+// ------------------ booleans ----------------------
+
+bool LinkedListNode::isLinked()
+{
+    return this->linked;
+}
+
 // ------------------ getters -----------------------
 
 LinkedListNode *LinkedListNode::getNext()
@@ -204,6 +229,11 @@ LinkedListNode *LinkedListNode::getNext()
 LinkedListNode *LinkedListNode::getPrevious()
 {
     return this->previous;
+}
+
+LinkedListNode::Header* LinkedListNode::getHeader()
+{
+    return  this->extern_header;
 }
 
 } //end of DataJuggler namespace

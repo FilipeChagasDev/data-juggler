@@ -1,7 +1,10 @@
 #include <iostream>
 #include "stringhash.hpp"
-#include "linearnode.hpp"
+#include "linkedlistnode.hpp"
 #include "treenode.hpp"
+#include "list.hpp"
+#include "stack.hpp"
+#include "queue.hpp"
 #include <cstdlib>
 
 /*
@@ -15,13 +18,103 @@ using namespace std;
 void manual_test_string_hash_generator();
 void manual_test_linear();
 void manual_test_treenode();
+void manual_test_list();
+void manual_test_stack();
+void manual_test_queue();
 
 int main()
 {
     //manual_test_string_hash_generator();
     //manual_test_linear();
-    manual_test_treenode();
+    //manual_test_treenode();
+    //manual_test_list();
+    //manual_test_stack();
+    manual_test_queue();
+
     return 0;
+}
+
+void manual_test_queue()
+{
+    DataJuggler::Queue<int> *queue = new DataJuggler::Queue<int>();
+
+    for(int i = 0; i < 10; i++)
+    {
+        cout << "push: " << i << endl;
+        queue->push(i);
+        for(DataJuggler::LinkedListItem<int> *j = queue->getFirstNode();
+            j != nullptr; DataJuggler::LinkedListItem<int>::goForward(&j))
+        {
+            cout << j->data << "<->";
+        }
+        cout << endl;
+    }
+
+    cout << "------------------------------" << endl;
+
+    for(int i = 0; i < 10; i++)
+    {
+        for(DataJuggler::LinkedListItem<int> *j = queue->getFirstNode();
+            j != nullptr; DataJuggler::LinkedListItem<int>::goForward(&j))
+        {
+            cout << j->data << "<->";
+        }
+
+        cout << endl << "peek: " << queue->peek() << endl;
+        cout << "pop: " << queue->pop() << endl;
+    }
+}
+
+void manual_test_stack()
+{
+    DataJuggler::Stack<int> *stack = new DataJuggler::Stack<int>();
+
+    for(int i = 0; i < 10; i++)
+    {
+        cout << "push: " << i << endl;
+        stack->push(i);
+        for(DataJuggler::LinkedListItem<int> *j = stack->getFirstNode();
+            j != nullptr; DataJuggler::LinkedListItem<int>::goForward(&j))
+        {
+            cout << j->data << "<->";
+        }
+        cout << endl;
+    }
+
+    cout << "------------------------------" << endl;
+
+    for(int i = 0; i < 10; i++)
+    {
+        for(DataJuggler::LinkedListItem<int> *j = stack->getFirstNode();
+            j != nullptr; DataJuggler::LinkedListItem<int>::goForward(&j))
+        {
+            cout << j->data << "<->";
+        }
+
+        cout << endl << "peek: " << stack->peek() << endl;
+        cout << "pop: " << stack->pop() << endl;
+    }
+}
+
+// ------------ List ------------------
+
+void manual_test_list()
+{
+    DataJuggler::List<int> *list = new DataJuggler::List<int>();
+
+    for(int i = 0; i < 5; i++)
+    {
+        list->insertBegin(5 - i);
+        list->insertEnd(5 + i + 1);
+    }
+
+    for(DataJuggler::LinkedListItem<int> *i = list->getFirstNode();
+        i != nullptr;
+        i = static_cast<DataJuggler::LinkedListItem<int>*>(i->getNext()))
+    {
+        cout << i->data << "<->";
+    }
+
 }
 
 // ------- BinaryTreeNode tester --------
@@ -197,6 +290,7 @@ void manual_test_linear()
 {
     DataJuggler::LinkedListNode::Header *h = new DataJuggler::LinkedListNode::Header();
     IntNode *curnode = new IntNode(h);
+    curnode->insertItSingle();
     curnode->data = 0;
     int answer;
 

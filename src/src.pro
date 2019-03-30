@@ -4,16 +4,20 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    linearnode.cpp \
     exception.cpp \
     stringhash.cpp \
-    treenode.cpp
+    treenode.cpp \
+    linkedlistnode.cpp \
+    main_test.cpp
 
 HEADERS += \
-    linearnode.hpp \
     exception.hpp \
     string.hpp \
     stringhash.hpp \
     treenode.hpp \
     lambda.hpp \
-    main_test.test
+    linkedlistnode.hpp \
+    linkedlistitem.hpp \
+    list.hpp \
+    stack.hpp \
+    queue.hpp
