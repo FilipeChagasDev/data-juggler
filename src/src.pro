@@ -8,7 +8,7 @@ SOURCES += \
     stringhash.cpp \
     treenode.cpp \
     linkedlistnode.cpp \
-    main_test.cpp
+    main_test.cxx
 
 HEADERS += \
     exception.hpp \

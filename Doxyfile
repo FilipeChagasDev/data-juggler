@@ -1,4 +1,4 @@
-PROJECT_NAME = Data Juggler documentation
+PROJECT_NAME = DataJuggler
 INPUT = src
 INPUT += README.md
 USE_MDFILE_AS_MAINPAGE = README.md

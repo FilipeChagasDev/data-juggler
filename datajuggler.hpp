@@ -2,7 +2,7 @@
 #define DATA_JUGGLER_HPP
 
 #include "src/exception.hpp"
-#include "src/linearnode.hpp"
+#include "src/linkedlistnode.hpp"
 #include "src/stringhash.hpp"
 #include "src/treenode.hpp"
 #include "src/linkedlistitem.hpp"
