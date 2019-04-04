@@ -20,4 +20,5 @@ HEADERS += \
     linkedlistitem.hpp \
     list.hpp \
     stack.hpp \
-    queue.hpp
+    queue.hpp \
+    keyingtree.hpp
