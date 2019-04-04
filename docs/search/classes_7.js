@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queue',['Queue',['../classDataJuggler_1_1Queue.html',1,'DataJuggler']]]
+  ['nulliteratorex',['NullIteratorEx',['../classDataJuggler_1_1NullIteratorEx.html',1,'DataJuggler']]]
 ];
