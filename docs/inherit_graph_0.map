@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$classDataJuggler_1_1BinaryTreeNode.html" title="DataJuggler::BinaryTreeNode" alt="" coords="5,42,200,69"/>
-<area shape="rect" id="node2" href="$classDataJuggler_1_1KeyingTreeNode.html" title="DataJuggler::KeyingTreeNode\l\&lt; datatype \&gt;" alt="" coords="248,5,445,47"/>
+<area shape="rect" id="node2" href="$classDataJuggler_1_1KeyingTreeNode.html" title="DataJuggler::KeyingTreeNode\l\&lt; keytype, datatype \&gt;" alt="" coords="248,5,445,47"/>
 <area shape="rect" id="node3" href="$classIntTreeNode.html" title="IntTreeNode" alt="" coords="299,71,394,98"/>
 </map>

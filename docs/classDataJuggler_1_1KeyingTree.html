@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DataJuggler: DataJuggler::KeyingTree&lt; datatype &gt; Class Template Reference</title>
+<title>DataJuggler: DataJuggler::KeyingTree&lt; keytype, datatype &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,7 +67,7 @@ $(function() {
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classDataJuggler_1_1KeyingTree-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">DataJuggler::KeyingTree&lt; datatype &gt; Class Template Reference</div>  </div>
+<div class="title">DataJuggler::KeyingTree&lt; keytype, datatype &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -75,40 +75,350 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a589d8a47a60c2f09f688ce9f804ed964"><td class="memItemLeft" align="right" valign="top"><a id="a589d8a47a60c2f09f688ce9f804ed964"></a>
-<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; datatype &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>getRoot</b> ()</td></tr>
-<tr class="separator:a589d8a47a60c2f09f688ce9f804ed964"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adde3a866bce2c1c4682188d907498b31"><td class="memItemLeft" align="right" valign="top"><a id="adde3a866bce2c1c4682188d907498b31"></a>
-datatype&#160;</td><td class="memItemRight" valign="bottom"><b>find</b> (unsigned long key)</td></tr>
-<tr class="separator:adde3a866bce2c1c4682188d907498b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac94f00be235d089b490908864b6d0524"><td class="memItemLeft" align="right" valign="top"><a id="ac94f00be235d089b490908864b6d0524"></a>
-<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; datatype &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>findNode</b> (unsigned long key)</td></tr>
-<tr class="separator:ac94f00be235d089b490908864b6d0524"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dbfc551ca6b8988995f083222916ae2"><td class="memItemLeft" align="right" valign="top"><a id="a2dbfc551ca6b8988995f083222916ae2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (unsigned long key, datatype data)</td></tr>
-<tr class="separator:a2dbfc551ca6b8988995f083222916ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c74ff649f3d9f0aa7d064caefc8b697"><td class="memItemLeft" align="right" valign="top"><a id="a5c74ff649f3d9f0aa7d064caefc8b697"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>insertNode</b> (<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; datatype &gt; *node)</td></tr>
-<tr class="separator:a5c74ff649f3d9f0aa7d064caefc8b697"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f3cff7f30d68803f87bc7d3bc2a9136"><td class="memItemLeft" align="right" valign="top"><a id="a4f3cff7f30d68803f87bc7d3bc2a9136"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove</b> (unsigned long key)</td></tr>
-<tr class="separator:a4f3cff7f30d68803f87bc7d3bc2a9136"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15a20606b9ada6da83857f0596e09843"><td class="memItemLeft" align="right" valign="top"><a id="a15a20606b9ada6da83857f0596e09843"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>removeNode</b> (<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; datatype &gt; *node)</td></tr>
-<tr class="separator:a15a20606b9ada6da83857f0596e09843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3caed207b0b0c69b7af8fa29912aca2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#a3caed207b0b0c69b7af8fa29912aca2d">KeyingTree</a> ()</td></tr>
+<tr class="separator:a3caed207b0b0c69b7af8fa29912aca2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a397f780914835886fbf7ca37bc501cc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#a397f780914835886fbf7ca37bc501cc9">~KeyingTree</a> ()</td></tr>
+<tr class="separator:a397f780914835886fbf7ca37bc501cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf808fde8040cf592d4a07b146148e0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#abf808fde8040cf592d4a07b146148e0a">getRoot</a> ()</td></tr>
+<tr class="separator:abf808fde8040cf592d4a07b146148e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5106ab8ccbddd21a17272f6a4678b01"><td class="memItemLeft" align="right" valign="top">datatype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#ad5106ab8ccbddd21a17272f6a4678b01">find</a> (keytype key)</td></tr>
+<tr class="separator:ad5106ab8ccbddd21a17272f6a4678b01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c809b58235772fe6ef20cce65eeb8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#a70c809b58235772fe6ef20cce65eeb8b">findNode</a> (keytype key)</td></tr>
+<tr class="separator:a70c809b58235772fe6ef20cce65eeb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a329fad7536920206b9b4a8ecf54c47bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#a329fad7536920206b9b4a8ecf54c47bf">insert</a> (keytype key, datatype data)</td></tr>
+<tr class="separator:a329fad7536920206b9b4a8ecf54c47bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f0938a37a52988766775a9fe95b6fcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#a2f0938a37a52988766775a9fe95b6fcb">insertNode</a> (<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *node)</td></tr>
+<tr class="separator:a2f0938a37a52988766775a9fe95b6fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac51229876f0d56b336cda5853324f6df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#ac51229876f0d56b336cda5853324f6df">remove</a> (keytype key)</td></tr>
+<tr class="separator:ac51229876f0d56b336cda5853324f6df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7d292fa8004b6c463fe1103f84b9e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#aba7d292fa8004b6c463fe1103f84b9e0">removeNode</a> (<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *node)</td></tr>
+<tr class="separator:aba7d292fa8004b6c463fe1103f84b9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bf4ef267c538d7ee4faf890d6edb258"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#a1bf4ef267c538d7ee4faf890d6edb258">belongingKey</a> (keytype key)</td></tr>
+<tr class="separator:a1bf4ef267c538d7ee4faf890d6edb258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a7d2fd26032bb21e6a7e535bbfa1bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#a13a7d2fd26032bb21e6a7e535bbfa1bf">belongingData</a> (datatype data)</td></tr>
+<tr class="separator:a13a7d2fd26032bb21e6a7e535bbfa1bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4ab2864f10bb072b16468e784293e4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#ab4ab2864f10bb072b16468e784293e4c">belongingNode</a> (<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *node)</td></tr>
+<tr class="separator:ab4ab2864f10bb072b16468e784293e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a108b80866834b619dbbc95563ceef998"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#a108b80866834b619dbbc95563ceef998">forEachNode</a> (function&lt; bool(<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *)&gt; callback)</td></tr>
+<tr class="separator:a108b80866834b619dbbc95563ceef998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a404f8e4a091c9e2e11504bc4545b72b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataJuggler_1_1KeyingTree.html#a404f8e4a091c9e2e11504bc4545b72b5">forEach</a> (function&lt; bool(keytype, datatype)&gt; callback)</td></tr>
+<tr class="separator:a404f8e4a091c9e2e11504bc4545b72b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:acbf1076f10285527323fde254e3ceaa0"><td class="memItemLeft" align="right" valign="top"><a id="acbf1076f10285527323fde254e3ceaa0"></a>
-<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; datatype &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>root</b></td></tr>
-<tr class="separator:acbf1076f10285527323fde254e3ceaa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1267ac848ed6aa67726b59e4393ff3b"><td class="memItemLeft" align="right" valign="top"><a id="ad1267ac848ed6aa67726b59e4393ff3b"></a>
+<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>root</b></td></tr>
+<tr class="separator:ad1267ac848ed6aa67726b59e4393ff3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename datatype&gt;<br />
-class DataJuggler::KeyingTree&lt; datatype &gt;</h3>
+<div class="textblock"><h3>template&lt;typename keytype, typename datatype&gt;<br />
+class DataJuggler::KeyingTree&lt; keytype, datatype &gt;</h3>
 
 <p>This class is the header to a binary keying tree. In this binary tree, the Nodes are quickly sought with binary search for keys. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3caed207b0b0c69b7af8fa29912aca2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3caed207b0b0c69b7af8fa29912aca2d">&#9670;&nbsp;</a></span>KeyingTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::<a class="el" href="classDataJuggler_1_1KeyingTree.html">KeyingTree</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor </p>
+
+</div>
+</div>
+<a id="a397f780914835886fbf7ca37bc501cc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397f780914835886fbf7ca37bc501cc9">&#9670;&nbsp;</a></span>~KeyingTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::~<a class="el" href="classDataJuggler_1_1KeyingTree.html">KeyingTree</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Destructor </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a13a7d2fd26032bb21e6a7e535bbfa1bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a7d2fd26032bb21e6a7e535bbfa1bf">&#9670;&nbsp;</a></span>belongingData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::belongingData </td>
+          <td>(</td>
+          <td class="paramtype">datatype&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks if there is a node with the argument data in the tree. If yes, returns true. </p>
+
+</div>
+</div>
+<a id="a1bf4ef267c538d7ee4faf890d6edb258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bf4ef267c538d7ee4faf890d6edb258">&#9670;&nbsp;</a></span>belongingKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::belongingKey </td>
+          <td>(</td>
+          <td class="paramtype">keytype&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks if there is a node with the argument key in the tree. If yes, returns true. </p>
+
+</div>
+</div>
+<a id="ab4ab2864f10bb072b16468e784293e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4ab2864f10bb072b16468e784293e4c">&#9670;&nbsp;</a></span>belongingNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::belongingNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Check if the node of the argument belongs to the tree. If yes, returns true. </p>
+
+</div>
+</div>
+<a id="ad5106ab8ccbddd21a17272f6a4678b01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5106ab8ccbddd21a17272f6a4678b01">&#9670;&nbsp;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">datatype <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">keytype&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method returns the data from a node found in the tree by the corresponding key. An <a class="el" href="classDataJuggler_1_1KeyNotFoundEx.html">KeyNotFoundEx</a> will be throwed whether the find method does not find this key. </p>
+
+</div>
+</div>
+<a id="a70c809b58235772fe6ef20cce65eeb8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c809b58235772fe6ef20cce65eeb8b">&#9670;&nbsp;</a></span>findNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; * <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::findNode </td>
+          <td>(</td>
+          <td class="paramtype">keytype&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method returns the pointer to a node found in the tree by the corresponding key. if the findNode method does not find this key, a nullptr will be returned. </p>
+
+</div>
+</div>
+<a id="a404f8e4a091c9e2e11504bc4545b72b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a404f8e4a091c9e2e11504bc4545b72b5">&#9670;&nbsp;</a></span>forEach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::forEach </td>
+          <td>(</td>
+          <td class="paramtype">function&lt; bool(keytype, datatype)&gt;&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is a functional forEach. This method takes as argument a function (or a lambda) that returns a bool and receives a key and a data from a node. The tree will be traversed symmetrically, from the smallest to the largest key, and for each node traversed, a call to the function of the argument will be performed, passing the key and the data from this node as argument to it. If the argument function returns true, the forEach job is stopped, and the arguments function calls will cease. If the function returns false, the forEach job continues. </p>
+
+</div>
+</div>
+<a id="a108b80866834b619dbbc95563ceef998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108b80866834b619dbbc95563ceef998">&#9670;&nbsp;</a></span>forEachNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::forEachNode </td>
+          <td>(</td>
+          <td class="paramtype">function&lt; bool(<a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *)&gt;&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is a functional forEach. This method takes as argument a function (or a lambda) that returns a bool and receives a <a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>. The tree will be traversed symmetrically, from the smallest to the largest key, and for each node traversed, a call to the function of the argument will be performed, passing its node as argument to it. If the argument function returns true, the forEach job is stopped, and the arguments function calls will cease. If the function returns false, the forEach job continues. </p>
+
+</div>
+</div>
+<a id="abf808fde8040cf592d4a07b146148e0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf808fde8040cf592d4a07b146148e0a">&#9670;&nbsp;</a></span>getRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; * <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::getRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method returns the root node of the tree </p>
+
+</div>
+</div>
+<a id="a329fad7536920206b9b4a8ecf54c47bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a329fad7536920206b9b4a8ecf54c47bf">&#9670;&nbsp;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype">keytype&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">datatype&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method creates a node with the data and the key specified in the arguments and inserts in the tree. If there is already another node with this same key in the tree, an <a class="el" href="classDataJuggler_1_1KeyAlreadyInsertedEx.html">KeyAlreadyInsertedEx</a> will be thrown. </p>
+
+</div>
+</div>
+<a id="a2f0938a37a52988766775a9fe95b6fcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0938a37a52988766775a9fe95b6fcb">&#9670;&nbsp;</a></span>insertNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::insertNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This method inserts the node specified in the arguments in the tree. If there is already another node with the same key in the tree, an <a class="el" href="classDataJuggler_1_1KeyAlreadyInsertedEx.html">KeyAlreadyInsertedEx</a> will be thrown. This method is not safe, prefer to use the insert method whenever possible. </p>
+
+</div>
+</div>
+<a id="ac51229876f0d56b336cda5853324f6df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac51229876f0d56b336cda5853324f6df">&#9670;&nbsp;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::remove </td>
+          <td>(</td>
+          <td class="paramtype">keytype&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>finds the node with the key specified in the argument and removes it from the tree. The sub-trees of this node will be re-inserted in the tree. If there is no node with this key in the tree, a <a class="el" href="classDataJuggler_1_1KeyNotFoundEx.html">KeyNotFoundEx</a> will be throw. </p>
+
+</div>
+</div>
+<a id="aba7d292fa8004b6c463fe1103f84b9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7d292fa8004b6c463fe1103f84b9e0">&#9670;&nbsp;</a></span>removeNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename keytype , typename datatype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classDataJuggler_1_1KeyingTree.html">DataJuggler::KeyingTree</a>&lt; keytype, datatype &gt;::removeNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDataJuggler_1_1KeyingTreeNode.html">KeyingTreeNode</a>&lt; keytype, datatype &gt; *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Checks if the argument node belongs to the tree and, if so, removes it and re-inserts its subtree. If the argument node does not belong to the tree, a <a class="el" href="classDataJuggler_1_1NodeNotOwnedEx.html">NodeNotOwnedEx</a> is throw. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="keyingtree_8hpp_source.html">keyingtree.hpp</a></li>
 </ul>
 </div><!-- contents -->
