@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['symmetricalorder',['symmetricalOrder',['../classDataJuggler_1_1BinaryTreeNode.html#a082f4223f8d7d40c5e85a9f2322a2b22',1,'DataJuggler::BinaryTreeNode']]]
+  ['movetoafterof',['moveToAfterOf',['../classDataJuggler_1_1LinkedListNode.html#ad4166bef988c213884d2dc5962519bbb',1,'DataJuggler::LinkedListNode']]],
+  ['movetobeforeof',['moveToBeforeOf',['../classDataJuggler_1_1LinkedListNode.html#a88c44bb0d302955fa4be2b1d5e1c743b',1,'DataJuggler::LinkedListNode']]]
 ];

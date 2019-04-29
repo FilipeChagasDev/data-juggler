@@ -5,6 +5,8 @@
 #include "list.hpp"
 #include "stack.hpp"
 #include "queue.hpp"
+#include "keyingtree.hpp"
+#include "exception.hpp"
 #include <cstdlib>
 
 /*
@@ -21,6 +23,7 @@ void manual_test_treenode();
 void manual_test_list();
 void manual_test_stack();
 void manual_test_queue();
+void manual_test_keyingtree();
 
 int main()
 {
@@ -29,9 +32,132 @@ int main()
     //manual_test_treenode();
     //manual_test_list();
     //manual_test_stack();
-    manual_test_queue();
+    //manual_test_queue();
+    manual_test_keyingtree();
 
     return 0;
+}
+
+void manual_test_keyingtree()
+{
+   DataJuggler::KeyingTree<unsigned long, string> *kt = new DataJuggler::KeyingTree<unsigned long, string>();
+   kt->insert(6, "filipe");
+   kt->insert(2, "joao");
+   kt->insert(7, "andre");
+   cout << " ----- belongingData ----" << endl;
+   cout << (kt->belongingData("filipe") == true ? "true" : "false") << endl;
+   cout << (kt->belongingData("joao") == true ? "true" : "false") << endl;
+   cout << (kt->belongingData("andre") == true ? "true" : "false") << endl;
+   cout << (kt->belongingData("mauro") == true ? "true" : "false") << endl;
+
+   cout << " ----- find ----" << endl;
+   cout << kt->find(7) << endl;
+   cout << kt->find(2) << endl;
+   try
+   {
+       kt->find(3);
+   }
+   catch (DataJuggler::Exception *ex)
+   {
+        cout << "Exception: " << ex->name << endl;
+   }
+
+    cout << " ----- forEach ----" << endl;
+    kt->forEach([](unsigned long key, string str)->bool
+    {
+        cout << "key: " << key << " | str: " << str << endl;
+        return false;
+    });
+
+    kt->remove(2);
+    //kt->remove(6);
+    //kt->remove(7);
+
+    cout << " ----- forEach ----" << endl;
+    kt->forEach([](unsigned long key, string str)->bool
+    {
+        cout << "key: " << key << " | str: " << str << endl;
+        return false;
+    });
+
+    cout << " ----- forEachNode ----" << endl;
+    kt->forEachNode([](DataJuggler::KeyingTreeNode<unsigned long, string> *node)->bool
+    {
+        node->data = "_" + node->data + "_";
+        return false;
+    });
+
+    cout << " ----- forEach ----" << endl;
+    kt->forEach([](unsigned long key, string str)->bool
+    {
+        cout << "key: " << key << " | str: " << str << endl;
+        return false;
+    });
+
+    kt->insert(2, "gogug");
+    kt->insert(1, "lup");
+    DataJuggler::KeyingTreeNode<unsigned long, string> *node = kt->findNode(6);
+    kt->removeNode(node);
+
+    cout << " ----- forEach ----" << endl;
+    kt->forEach([](unsigned long key, string str)->bool
+    {
+        cout << "key: " << key << " | str: " << str << endl;
+        return false;
+    });
+
+    cout << "------ erasing with removeNode ------" << endl;
+    kt->forEachNode([&](DataJuggler::KeyingTreeNode<unsigned long, string> *node)->bool
+    {
+        cout << " -----" << endl;
+        kt->forEach([](unsigned long key, string str)->bool
+        {
+            cout << "key: " << key << " | str: " << str << endl;
+            return false;
+        });
+
+        kt->removeNode(node);
+        return false;
+    });
+
+    for(unsigned long i = 1; i < 10; i++)
+    {
+        string str = "aaa";
+        str[0] += i;
+        str[1] += i + 1;
+        str[2] += i + 2;
+        DataJuggler::KeyingTreeNode<unsigned long, string> *nnode = new DataJuggler::KeyingTreeNode<unsigned long, string>(i,str);
+        kt->insertNode(nnode);
+    }
+
+    cout << " ----- forEach ----" << endl;
+    kt->forEach([&](unsigned long key, string str)->bool
+    {
+        cout << "key: " << key << " | str: " << str << endl;
+        cout << ( kt->belongingData(str) == true ? "true" : "false" ) << endl;
+        return false;
+    });
+
+    cout << " ----- forEachNode ----" << endl;
+    kt->forEachNode([&](DataJuggler::KeyingTreeNode<unsigned long, string> *node)->bool
+    {
+        cout << "key: " << node->key << " | str: " << node->data << endl;
+        cout << ( kt->belongingNode(node) == true ? "true" : "false" ) << endl;
+        return false;
+    });
+
+    DataJuggler::KeyingTreeNode<unsigned long, string> *fakenode = new DataJuggler::KeyingTreeNode<unsigned long, string>(50,"jhvdiu");
+    cout << ( kt->belongingNode(fakenode) == true ? "true" : "false" ) << endl;
+
+    delete kt;
+
+    cout << "memory leakage test " << endl;
+    while (1)
+    {
+        DataJuggler::KeyingTree<int,string> *t = new DataJuggler::KeyingTree<int,string>();
+        for(int i = 0; i < 10000; i++) t->insert(i,"__________________________________________________________________________");
+        delete t;
+    }
 }
 
 void manual_test_queue()
